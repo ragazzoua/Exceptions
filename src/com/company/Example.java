@@ -15,12 +15,17 @@ public class Example {
         int x, y;
         try {
             x = getInt();
+            y = getInt();
         } catch (NoSuchElementException e) {
-            x = getInt();
+            throw new ArithmeticException("no suitable Input");
         }
-        y = getInt();
         System.out.println("x is " + x + " ,y is " + y);
-        return x / y;
+        try {
+            return x / y;
+        }catch (ArithmeticException e){
+            throw new ArithmeticException("attempt to devide by zero");
+        }
+
     }
 
     private static int getInt() {
