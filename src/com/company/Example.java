@@ -7,8 +7,14 @@ import java.util.Scanner;
 public class Example {
 
     public static void main(String[] args) {
-        int result = devide();
-        System.out.println(result);
+        try {
+            int result = devide();
+            System.out.println(result);
+        }catch (ArithmeticException e){
+            System.out.println(e.toString());
+            System.out.println("Unable to perform division, autopilot shutting down");
+        }
+
     }
 
     private static int devide() {
