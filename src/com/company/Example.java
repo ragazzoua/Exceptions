@@ -10,7 +10,7 @@ public class Example {
         try {
             int result = devide();
             System.out.println(result);
-        }catch (ArithmeticException e){
+        } catch (ArithmeticException | NoSuchElementException e) {
             System.out.println(e.toString());
             System.out.println("Unable to perform division, autopilot shutting down");
         }
@@ -19,16 +19,16 @@ public class Example {
 
     private static int devide() {
         int x, y;
-        try {
-            x = getInt();
-            y = getInt();
-            System.out.println("x is " + x + " ,y is " + y);
-            return x / y;
-        } catch (NoSuchElementException e) {
-            throw new ArithmeticException("no suitable Input");
-        } catch (ArithmeticException e) {
-            throw new ArithmeticException("attempt to devide by zero");
-        }
+//        try {
+        x = getInt();
+        y = getInt();
+        System.out.println("x is " + x + " ,y is " + y);
+        return x / y;
+//        } catch (NoSuchElementException e) {
+//            throw new ArithmeticException("no suitable Input");
+//        } catch (ArithmeticException e) {
+//            throw new ArithmeticException("attempt to devide by zero");
+//        }
     }
 
     private static int getInt() {
