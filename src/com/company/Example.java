@@ -1,6 +1,7 @@
 package com.company;
 
 import java.util.InputMismatchException;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class Example {
@@ -11,8 +12,13 @@ public class Example {
     }
 
     private static int devide() {
-        int x = getInt();
-        int y = getInt();
+        int x, y;
+        try {
+            x = getInt();
+        } catch (NoSuchElementException e) {
+            x = getInt();
+        }
+        y = getInt();
         System.out.println("x is " + x + " ,y is " + y);
         return x / y;
     }
