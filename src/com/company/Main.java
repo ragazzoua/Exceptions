@@ -1,5 +1,6 @@
 package com.company;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -12,7 +13,7 @@ public class Main {
 //        System.out.println(devideEAFP(x,y));
 //        System.out.println(devide(x,y));
 
-        int x = getIntLBYL();
+        int x = getIntEAFP();
         System.out.println("x is " + x);
     }
 
@@ -36,6 +37,17 @@ public class Main {
             return Integer.parseInt(input);
         }
         else {
+            return 0;
+        }
+    }
+
+    private static int getIntEAFP(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please enter an Integer");
+        try {
+            return scanner.nextInt();
+        }
+        catch (InputMismatchException e){
             return 0;
         }
     }
